@@ -1,0 +1,7 @@
+{
+  "name": "CajaHerramientas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
