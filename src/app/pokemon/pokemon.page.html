@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Pokemon</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label position="floating">Nombre del Pokémon</ion-label>
+    <ion-input [(ngModel)]="nombre" type="text"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="obtenerInfoPokemon()">Buscar Pokemon</ion-button>
+  <br>
+  <ion-card *ngIf="pokemon">
+    <ion-card-content>
+          <img [src]="imagen" alt="Imagen del Pokémon" />
+          <p>Experiencia Base: <strong>{{ experiencia }}</strong></p>
+          <br>
+          <p>Habilidades:</p>
+          <ul>
+            <li *ngFor="let habilidad of habilidades"><strong>{{ habilidad | titlecase }}</strong></li>
+          </ul>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

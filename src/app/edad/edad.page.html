@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Edad</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Ingresa un nombre</ion-label>
+        <ion-input [(ngModel)]="nombre" type="text"></ion-input>
+      </ion-item>
+      <ion-button expand="full" (click)="predecirEdad()" fill="clear">Predecir Edad</ion-button>
+    </ion-card-content>
+  </ion-card>
+<br>
+  <ion-card *ngIf="edad">
+    <ion-card-content class="result">
+      <h2> {{ nombreActual }} es: <strong>{{ etapa }}</strong>, tiene <strong>{{edad}}</strong> años</h2>
+    </ion-card-content>
+  </ion-card>
+  <br>
+  <img *ngIf="edad" [src]="imagenEdad" class="edad-img" alt="Imagen de Edad">
+</ion-content>

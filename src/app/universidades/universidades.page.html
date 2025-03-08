@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Universidades</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Ingresa el país en inglés</ion-label>
+        <ion-input [(ngModel)]="pais"></ion-input>
+      </ion-item>
+      <ion-button expand="full" (click)="buscarUniversidades()">Buscar Universidades</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="universidades.length > 0">
+    <ion-card-content class="tabla">
+      <table>
+        <tr>
+          <th>Nombre</th>
+          <th>Dominio</th>
+          <th>Página Web</th>
+        </tr>
+        <tr *ngFor="let uni of universidades">
+          <td>{{ uni.name }}</td>
+          <td>{{ uni.domains[0] }}</td>
+          <td><a [href]="uni.web_pages[0]" target="_blank">{{ uni.web_pages[0] }}</a></td>
+        </tr>
+      </table>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

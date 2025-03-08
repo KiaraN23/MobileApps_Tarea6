@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Predecir Género</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Ingresa un nombre</ion-label>
+        <ion-input [(ngModel)]="nombre" type="text"></ion-input>
+      </ion-item>
+      <ion-button expand="full" (click)="predecirGenero()" [ngStyle]="{ 'color': colorGenero }" fill="clear">Predecir Género</ion-button>
+    </ion-card-content>
+  </ion-card>
+<br>
+  <ion-card *ngIf="genero" [ngStyle]="{ 'background-color': colorGenero}">
+    <ion-card-content>
+      <h2>El género de {{ nombreActual }} es: <strong>{{ genero }}</strong></h2>
+    </ion-card-content>
+  </ion-card>
+  <br>
+  <img *ngIf="genero" [src]="imagenGenero" class="genero-img" alt="Imagen de género">
+  
+</ion-content>

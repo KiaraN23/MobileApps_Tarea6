@@ -1,0 +1,37 @@
+.tabla {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+  
+th, td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    word-break: break-word;
+}
+
+a {
+    display: block;
+    max-width: 100%;
+    overflow-wrap: break-word; 
+}
+
+@media (max-width: 600px) {
+    table {
+      font-size: 14px; 
+    }
+}
+  
+th {
+    background-color: #069494;
+    color: aliceblue;
+}
+
+.tabla:hover {
+    background-color: rgb(36, 36, 41);
+}
+  
